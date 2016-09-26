@@ -15,3 +15,6 @@ create table authorities (
   INSERT INTO task (description,due_to ,completed,email,task_priority,task_status) VALUES
     ('Setting up our application', '2014-11-22 13:23:44.657',1,'test@gmail.com','high','done'),
     ('Handling our form', '2014-11-22 13:23:44.657',0,'test@gmail.com','medium','started');
+
+
+
