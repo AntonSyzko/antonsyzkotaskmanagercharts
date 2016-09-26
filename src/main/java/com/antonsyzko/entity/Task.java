@@ -5,13 +5,13 @@ package com.antonsyzko.entity;
  */
 
 import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name = "task")
@@ -32,7 +32,7 @@ public class Task {
     @Column
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MMM-YYYY")
-    private DateTime createdAt;
+    private Date createdAt;
 
     @Column
     @NotNull(message = "date has to be  picked")
@@ -40,13 +40,13 @@ public class Task {
     @DateTimeFormat(pattern="dd-MMM-YYYY")
     @Future(message = " SET A DATE IN FUTURE")
 
-    private DateTime dueTo;
+    private Date dueTo;
 
-    public DateTime getDueTo() {
+    public Date getDueTo() {
         return dueTo;
     }
 
-    public void setDueTo(DateTime dueTo) {
+    public void setDueTo(Date dueTo) {
         this.dueTo = dueTo;
     }
 
@@ -130,11 +130,11 @@ public class Task {
 
 
 
-    public DateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(DateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
