@@ -105,15 +105,6 @@
 			<optional>true</optional>
 		</dependency>
 
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time-hibernate</artifactId>
-			<version>${joda-time-hibernate.version}</version>
-		</dependency>
 
 
 	</dependencies>
