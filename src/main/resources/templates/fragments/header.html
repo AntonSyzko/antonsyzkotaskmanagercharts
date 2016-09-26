@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:pages="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Title</title>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html; charset=UTF-8;width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
+
+
+</head>
+<body>
+<!--<div class="w3-container">-->
+    <div th:fragment="header" >
+        <ul class="w3-navbar w3-light-grey w3-card-8" style="margin: 1%">
+            <li><img src="../../static/images/time_manager.jpg" class="w3-round" width="200" height="70" style="align-self: stretch"
+                     th:src="@{/images/time_manager.jpg}" /></li>
+            <li><h6 th:inline="text"  > Task manager: <b style="color: #4CAF50">[[${#httpServletRequest.remoteUser}]]!</b> </h6></li>
+            <li class="w3-right" ><form th:action="@{/logout}" method="post"   >
+                <input type="submit" value="Sign Out" style="background-color:lightblue; "/>
+            </form></li>
+            <li class="w3-right active"><a href="tasks.html" th:href="@{/}"><h6>HOME</h6></a></li>
+            <li class="w3-right"><a href="charts.html" th:href="@{/charts}"><h6>DETAILED CHARTS</h6></a></li>
+
+
+        </ul>
+
+    </div>
+
+    <!--</div>-->
+<!--<div th:fragment="header">-->
+    <!--<nav class="navbar navbar-default ">-->
+
+        <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header ">-->
+                <!--&lt;!&ndash;<a class="navbar-brand" href="#">WebSiteName</a>&ndash;&gt;-->
+                <!--<div class="navbar-brand"><img src="../../static/images/time_manager.jpg" class="w3-round" width="200" height="70" style="align-self: inherit"-->
+                                               <!--th:src="@{/images/time_manager.jpg}" /></div>-->
+            <!--</div>-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--&lt;!&ndash;<li><img src="../../static/images/time_manager.jpg" class="w3-round" width="200" height="80" style="float: left"&ndash;&gt;-->
+                         <!--&lt;!&ndash;th:src="@{/images/time_manager.jpg}" /></li>&ndash;&gt;-->
+                <!--<li> <h6 th:inline="text"  > Task manager: <b style="color: #4CAF50">[[${#httpServletRequest.remoteUser}]]!</b> </h6></li>-->
+                <!--<li><a href="charts.html" th:href="@{/charts}"><h6>DETAILED CHARTS</h6></a>-->
+                <!--</li>-->
+                <!--<li class="active"><a href="tasks.html" th:href="@{/}"><h6>HOME</h6></a></li>-->
+
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><form th:action="@{/logout}" method="post"  >-->
+                        <!--<input type="submit" value="Sign Out" style="background-color:lightblue "/>-->
+                    <!--</form>-->
+                    <!--</li>-->
+                <!--</ul>-->
+
+
+
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</nav>-->
+<!--</div>-->
+
+
+
+
+</body>
+</html>

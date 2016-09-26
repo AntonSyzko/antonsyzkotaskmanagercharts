@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:pages="http://www.w3.org/1999/xhtml">
+<head>
+<title>Charts page</title>
+<!--<link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}" />-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <script th:inline="javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
+    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript" th:inline="javascript">
+        window.onload=function () {
+            processStatusCharts();
+            taskPriorityChart();
+            taskEmailChart();
+        }
+    </script>
+
+
+
+    <script type="text/javascript" th:inline="javascript">
+
+        var statAll = [[${statall}]];
+        var inprocessstatus = [[${inprocessstatus}]];
+        var donestatus = [[${donestatus}]];
+        var startedstatus = [[${startedstatus}]];
+        function processStatusCharts() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "theme3",//theme1
+                title:{
+                    text: "TASK PROCESSES CHART"
+                },
+                animationEnabled: true,   // change to true
+                data: [
+                    {
+                        // Change type to "bar", "area", "spline", "pie",'column'etc.
+                        type: "bar",
+                        dataPoints: [
+                            { label: "ALL TASKS",  y: statAll },
+                            { label: "TASKS IN PROCESS", y: inprocessstatus  },
+                            { label: "COMPLETED STATUS TASKS", y: donestatus  },
+                            { label: "STARTED STATUS TASKS",  y: startedstatus  }
+
+                        ]
+                    }
+                ]
+            });
+            chart.render();
+        }
+
+    </script>
+    <script type="text/javascript" th:inline="javascript">
+
+        var statAll = [[${statall}]];
+        var mediumpriority = [[${mediumpriority}]];
+        var lowpriority = [[${lowpriority}]];
+        var highpriority = [[${highpriority}]];
+
+
+        function taskPriorityChart() {
+            var chart = new CanvasJS.Chart("chartContainer2", {
+                theme: "theme3",//theme1
+                title:{
+                    text: "TASK PRIORIRTIES CHART"
+                },
+                animationEnabled: true,   // change to true
+                data: [
+                    {
+                        // Change type to "bar", "area", "spline", "pie",'column'etc.
+                        type: "area",
+                        dataPoints: [
+                            { label: "ALL TASKS",  y: statAll },
+                            { label: "LOW PRIORITY TASKS",  y: lowpriority  },
+                            {label:"HIGH PRIORITY TASKS",y:highpriority},
+                            {label:"MEDIUM PRIORITY TASKS",y:mediumpriority}
+                        ]
+                    }
+                ]
+            });
+            chart.render();
+        }
+
+    </script>
+    <script type="text/javascript" th:inline="javascript">
+
+        var statAll = [[${statall}]];
+        var memail = [[${memail}]];
+        var javadevmail = [[${javadevmail}]];
+        var teamleadmail = [[${teamleadmail}]];
+        var pmmail = [[${pmmail}]];
+        var testerqa = [[${testerqa}]];
+
+
+
+        function taskEmailChart() {
+            var chart = new CanvasJS.Chart("chartContainer3", {
+                theme: "theme3",//theme1
+                title:{
+                    text: "ASSIGNED TASKS BY EMAIL"
+                },
+                animationEnabled: true,   // change to true
+                data: [
+                    {
+                        // Change type to "bar", "area", "spline", "pie",'column'etc.
+                        type: "column",
+                        dataPoints: [
+                            { label: "ALL TASKS",  y: statAll },
+                            { label: "MY TASKS",  y: memail  },
+                            {label:"JAVA DEVELOPER TASKS",y:javadevmail},
+                            {label:"TEAM LEAD TASKS",y:teamleadmail},
+                            {label:"PROJECT MANAGER TASKS",y:pmmail},
+                            {label:"QA TESTER TASKS",y:testerqa}
+
+                        ]
+                    }
+                ]
+            });
+            chart.render();
+        }
+
+    </script>
+
+</head>
+<body>
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+
+<div class=" w3-row w3-card  " style="margin: 1%">
+    <div class="w3-half w3-card w3-hover-shadow" id="chartContainer" style="height: 200px; width: 50%;"></div>
+
+    <div class="w3-half w3-card w3-hover-shadow " id="chartContainer2" style="height: 200px; width: 50%;"></div>
+
+
+</div>
+<div class="w3-row" style="margin: 1%">
+    <div class="w3-card w3-hover-shadow" id="chartContainer3" style="height: 250px; width: 100%;"></div>
+
+</div>
+
+</body>
+</html>

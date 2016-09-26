@@ -1,0 +1,38 @@
+CREATE SEQUENCE task_seq;
+
+CREATE TABLE task (
+  id bigint NOT NULL DEFAULT NEXTVAL ('task_seq'),
+  completed boolean(1) DEFAULT NULL,
+  created_at timestamp(0) DEFAULT NULL,
+  description varchar(64) NOT NULL,
+  due_to timestamp(0) DEFAULT NULL,
+  email varchar(64) NOT NULL,
+  task_priority varchar(30) NOT NULL,
+  task_status varchar(30) NOT NULL,
+  PRIMARY KEY (id)
+)
+
+alter sequence task_seq restart with 1;
+
+
+
+
+CREATE TABLE users (
+  username varchar(100) NOT NULL,
+  password varchar(100) NOT NULL,
+  enabled smallint NOT NULL,
+  PRIMARY KEY (username)
+)
+
+
+
+
+CREATE TABLE authorities (
+  username varchar(100) NOT NULL,
+  authority varchar(100) NOT NULL,
+  CONSTRAINT ix_auth_username UNIQUE  (username,authority),
+  CONSTRAINT fk_authorities_users FOREIGN KEY (username) REFERENCES users (username)
+)
+
+
+CREATE UNIQUE INDEX ix_auth_username ON authorities(username,authority);
