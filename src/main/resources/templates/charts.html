@@ -20,6 +20,8 @@
     <script th:inline="javascript" src="../static/js/canvasjs.min.js"></script>
     <script  type="text/javascript" th:inline="javascript">
         window.onload=function () {
+                     var statAll = [[${statall}]];
+            alert(statAll);
             processStatusCharts();
             taskPriorityChart();
             taskEmailChart();
@@ -149,7 +151,8 @@
 <canvas id="c2" width="500" height="500"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <script>
-    var ctx = document.getElementById("c2").getContext("2d");
+    prompt(statAll);
+    var ctx = document.getElementById("c33").getContext("2d");
     var data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
@@ -160,7 +163,7 @@
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
+            data: [15, 12, 22, 30, 21, 14, 50]
         }, {
             label: "My Second dataset",
             fillColor: "rgba(151,187,205,0.2)",
@@ -169,7 +172,7 @@
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
+            data: [2, 8, 20, 30, 4, 15, statAll]
         }]
     };
     var MyNewChart = new Chart(ctx).Line(data);
