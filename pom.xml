@@ -86,9 +86,13 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>chartjs</artifactId>
-			<version>26962ce-1</version>
+			<version>1.0.2</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>dojo</artifactId>
+			<version>1.10.4-1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
