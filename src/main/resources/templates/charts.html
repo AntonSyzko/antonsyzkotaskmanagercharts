@@ -20,15 +20,14 @@
     <script th:inline="javascript" src="../static/js/canvasjs.min.js"></script>
     <script  type="text/javascript" th:inline="javascript">
         window.onload=function () {
-
-            var statAll = [[${statall}]];
+                     var statAll = [[${statall}]];
             alert(statAll);
-
             processStatusCharts();
             taskPriorityChart();
             taskEmailChart();
         }
     </script>
+
 
     <script type="text/javascript" th:inline="javascript">
 
@@ -149,9 +148,7 @@
 
 </div>
 
-
-
-<canvas id="c33" width="500" height="500"></canvas>
+<canvas id="c2" width="500" height="500"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <script>
     prompt(statAll);
@@ -180,7 +177,6 @@
     };
     var MyNewChart = new Chart(ctx).Line(data);
 </script>
-
 
 </body>
 </html>
