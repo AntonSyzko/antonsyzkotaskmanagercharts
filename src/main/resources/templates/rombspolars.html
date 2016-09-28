@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:pages="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8;width=device-width, initial-scale=1" />
+    <script th:inline="javascript" src="//code.jquery.com/jquery.js"></script>
+    <script th:inline="javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <script th:inline="javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <link href="../../resources/static/css/w3.css" th:href="@{/css/w3.css}" rel="stylesheet" media="screen" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+    <link href="../../resources/static/css/w3.css" th:href="@{/css/w3.css}" rel="stylesheet" media="screen" />
+
+<style>
+    body {
+        padding-top: 9%;
+    }
+    @media (max-width: 979px) {
+        body {
+            padding-top: 0px;
+        }
+    }
+</style>
+
+    <script type="text/javascript" th:inline="javascript">
+        var statAll = [[${statall}]];
+        var inprocessstatus = [[${inprocessstatus}]];
+        var donestatus = [[${donestatus}]];
+        var startedstatus = [[${startedstatus}]];
+        var mediumpriority = [[${mediumpriority}]];
+        var lowpriority = [[${lowpriority}]];
+        var highpriority = [[${highpriority}]];
+        var memail = [[${memail}]];
+        var javadevmail = [[${javadevmail}]];
+        var teamleadmail = [[${teamleadmail}]];
+        var pmmail = [[${pmmail}]];
+        var testerqa = [[${testerqa}]];
+
+        window.onload=function () {
+
+        }
+    </script>
+
+
+
+    <title>Title</title>
+</head>
+<body  data-spy="scroll" data-target=".navbar" data-offset="60">
+<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+<div class="w3-container " >
+    <div class="w3-half w3-card w3-hover-shadow" >
+        <canvas id="radar"  ></canvas>
+    </div>
+    <div class="w3-half w3-card w3-hover-shadow"   >
+        <canvas id="polar" ></canvas>
+
+    </div>
+
+</div>
+<div class="w3-container">
+    <div class="w3-half w3-card w3-hover-shadow">    <canvas id="c33" style="width: 100%; height: 200px"></canvas>
+    </div>
+    <div class="w3-half w3-card w3-hover-shadow">    <canvas id="c44" style="width: 100%; height: 200px"></canvas>
+    </div>
+
+
+    <!--<div class="w3-row  w3-card w3-hover-shadow">-->
+
+<!--</div>-->
+</div>
+<!--<div class="container">-->
+    <!--<div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+    <!--<div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("c33").getContext("2d");
+    var data = {
+        labels: ["my tasks", "java dev tasks", "project manager tasks", "team lead tasks", "QA tester tasks"],
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(20,100,150,0.3)",
+            strokeColor: "rgba(130,240,200,1)",
+            pointColor: "rgba(200,100,25,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(100,200,20,1)",
+            data: [memail,javadevmail,pmmail,teamleadmail,testerqa]
+        }, {
+            label: "My Second dataset",
+            fillColor: "rgba(100,200,300,0.9)",
+            strokeColor: "rgba(200,100,200,1)",
+            pointColor: "rgba(80,117,105,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [statAll,highpriority,lowpriority,mediumpriority,donestatus]
+        },
+            {
+                label: "My Third dataset",
+                fillColor: "rgba(170,112,135,0.5)",
+                strokeColor: "rgba(203,140,110,1)",
+                pointColor: "rgba(200,50,100,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(110,50,200,1)",
+                data: [highpriority,startedstatus,lowpriority,inprocessstatus,statAll]},
+            {
+                label: "My Fourth dataset",
+                fillColor: "rgba(10,300,150,0.5)",
+                strokeColor: "rgba(140,10,100,1)",
+                pointColor: "rgba(100,153,300,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(120,147,100,1)",
+                data: [donestatus,inprocessstatus,highpriority,statAll,lowpriority]}
+
+        ]
+
+    };
+
+    var MyNewChart = new Chart(ctx).Line(data);
+</script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("c44").getContext("2d");
+    var data = {
+        labels: ["my tasks", "java dev tasks", "project manager tasks", "team lead tasks", "QA tester tasks"],
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [memail,javadevmail,pmmail,teamleadmail,testerqa]
+        }, {
+            label: "My Second dataset",
+            fillColor: "rgba(100,187,205,0.6)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [statAll,highpriority,lowpriority,mediumpriority,donestatus]
+        },
+            {
+                label: "My Third dataset",
+                fillColor: "rgba(50,157,300,0.4)",
+                strokeColor: "rgba(153,120,150,1)",
+                pointColor: "rgba(153,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,150,1)",
+                data: [inprocessstatus,startedstatus,lowpriority,highpriority,statAll]},
+            {
+                label: "My Fourth dataset",
+                fillColor: "rgba(10,300,150,0.5)",
+                strokeColor: "rgba(140,10,100,1)",
+                pointColor: "rgba(100,153,300,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(120,147,100,1)",
+                data: [lowpriority,inprocessstatus,highpriority,statAll,donestatus]}
+
+        ]
+
+    };
+
+    var MyNewChart = new Chart(ctx).Line(data);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+<script type="text/javascript"  th:inline="javascript" >
+    var ctx = document.getElementById("radar");
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ["MY TASKS", "JAVA DEV TASKS", "TeAM LEAD TASKS", "PM TASKS", "QA TESTER TASKS"],
+            datasets: [{
+                label: 'TASKS BY MAIL',
+                backgroundColor: "rgba(153,255,51,0.4)",
+                borderColor: "rgba(153,255,51,1)",
+                data: [memail,javadevmail,pmmail,teamleadmail,testerqa]
+            }, {
+                label: 'TASKS BY STATUS',
+                backgroundColor: "rgba(255,153,0,0.4)",
+                borderColor: "rgba(255,153,0,1)",
+                data: [inprocessstatus,startedstatus,lowpriority,highpriority,statAll]
+            }]
+        }
+    });
+</script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("polar").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: ["ALL TASKS", "DONE TASKS", "STARTED TASKS", "IN PROCESS TASKS", "LOW PRIORITY", "HIGH", "MEDUIM"],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [statAll,donestatus,startedstatus,inprocessstatus,lowpriority,highpriority,mediumpriority]
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>

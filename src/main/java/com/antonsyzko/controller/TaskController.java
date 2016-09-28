@@ -68,6 +68,12 @@ public class TaskController extends WebMvcConfigurerAdapter {
         return "charts";
     }
 
+    @RequestMapping(value="/rombspolars",method=RequestMethod.GET)
+    public String rombsPolars(Model model) {
+        return "rombspolars";
+    }
+
+
 
     @RequestMapping(method = RequestMethod.GET)
     public String findAll(Model model) {
