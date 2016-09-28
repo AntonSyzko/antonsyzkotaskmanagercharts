@@ -20,9 +20,9 @@
     <script th:inline="javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
     <!--boot-->
 
-    <!--w3.css-->
-    <link href="../../resources/static/css/w3.css" th:href="@{static/css/w3.css}" rel="stylesheet" media="screen" />
        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
+    <link type="text/css" rel="stylesheet" href="/static/css/w3.css" th:hrer="@{/static/css/w3.css}"/>
+
     <!--canvas.js-->
     <link href="../../resources/static/js/canvasjs.min.js" th:href="@{/js/canvasjs.min.js}" rel="stylesheet" media="screen" />
     <script th:inline="javascript" src="fragments/canvasjs.min.js"></script>
@@ -40,6 +40,8 @@
 
     <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
     <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+
 
     <script type="text/javascript" th:inline="javascript">
         webshims.setOptions('waitReady', false);
