@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
-    <script th:inline="javascript"  src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!--<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>-->
 
 
     <!--bootstrap-->
@@ -18,100 +18,15 @@
     <script th:inline="javascript" src="//code.jquery.com/jquery.js"></script>
     <script th:inline="javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script th:inline="javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+   <!--chartsjs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
     <!--boot-->
 
-       <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
-    <link type="text/css" rel="stylesheet" href="/static/css/w3.css" th:hrer="@{/static/css/w3.css}"/>
-
-    <!--canvas.js-->
-    <link href="../../resources/static/js/canvasjs.min.js" th:href="@{/js/canvasjs.min.js}" rel="stylesheet" media="screen" />
-    <script th:inline="javascript" src="fragments/canvasjs.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <!--<link th:href="@{/css/w3.css}" href="/css/w3.css"  rel="stylesheet" type="text/css"  />-->
 
 
-
-    <script type="text/javascript" th:inline="javascript">
-         window.onload=function () {
-             processStatusCharts();
-             taskPriorityChart();
-         }
-    </script>
-
-    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
-    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
-
-
-    <script type="text/javascript" th:inline="javascript">
-        webshims.setOptions('waitReady', false);
-        webshims.setOptions('forms-ext', {types: 'date'});
-        webshims.polyfill('forms forms-ext');
-    </script>
-
-        <!--<script type="text/javascript" th:inline="javascript">-->
-
-        <!--var statAll = [[${statall}]];-->
-        <!--var inprocessstatus = [[${inprocessstatus}]];-->
-        <!--var donestatus = [[${donestatus}]];-->
-        <!--var startedstatus = [[${startedstatus}]];-->
-        <!--function processStatusCharts() {-->
-            <!--var chart = new CanvasJS.Chart("chartContainer", {-->
-                <!--theme: "theme3",//theme1-->
-                <!--title:{-->
-                    <!--text: "TASK PROCESSES CHART"-->
-                <!--},-->
-                <!--animationEnabled: true,   // change to true-->
-                <!--data: [-->
-                    <!--{-->
-                        <!--// Change type to "bar", "area", "spline", "pie",'column'etc.-->
-                        <!--type: "bar",-->
-                        <!--dataPoints: [-->
-                            <!--{ label: "ALL TASKS",  y: statAll },-->
-                            <!--{ label: "TASKS IN PROCESS", y: inprocessstatus  },-->
-                            <!--{ label: "COMPLETED STATUS TASKS", y: donestatus  },-->
-                            <!--{ label: "STARTED STATUS TASKS",  y: startedstatus  }-->
-
-                        <!--]-->
-                    <!--}-->
-                <!--]-->
-            <!--});-->
-            <!--chart.render();-->
-        <!--}-->
-
-    <!--</script>-->
-    <!--<script type="text/javascript" th:inline="javascript">-->
-
-        <!--var statAll = [[${statall}]];-->
-        <!--var mediumpriority = [[${mediumpriority}]];-->
-        <!--var lowpriority = [[${lowpriority}]];-->
-        <!--var highpriority = [[${highpriority}]];-->
-
-
-        <!--function taskPriorityChart() {-->
-            <!--var chart = new CanvasJS.Chart("chartContainer2", {-->
-                <!--theme: "theme3",//theme1-->
-                <!--title:{-->
-                    <!--text: "TASK PRIORIRTIES CHART"-->
-                <!--},-->
-                <!--animationEnabled: true,   // change to true-->
-                <!--data: [-->
-                    <!--{-->
-                        <!--// Change type to "bar", "area", "spline", "pie",'column'etc.-->
-                        <!--type: "pie",-->
-                        <!--dataPoints: [-->
-<!--//                            { label: "ALL TASKS",  y: statAll },-->
-                            <!--{ label: "LOW PRIORITY TASKS",  y: lowpriority  },-->
-                            <!--{label:"HIGH PRIORITY TASKS",y:highpriority},-->
-                            <!--{label:"MEDIUM PRIORITY TASKS",y:mediumpriority}-->
-                        <!--]-->
-                    <!--}-->
-                <!--]-->
-            <!--});-->
-            <!--chart.render();-->
-        <!--}-->
-
-    <!--</script>-->
 
 
 
@@ -131,6 +46,14 @@
 
 
     <style>
+        body {
+            padding-top: 6%;
+        }
+        @media (max-width: 979px) {
+            body {
+                padding-top: 0px;
+            }
+        }
 
         div.scrollable {
             width: 100%;
@@ -147,7 +70,23 @@
         /*}*/
         table{
             align-content: center;
+            border-radius: 5px;
+
         }
+
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 98%;
+            border-radius: 5px;
+            margin: 1%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
     </style>
     <!--<script th:inline="javascript">-->
         <!--/*<![CDATA[*/-->
@@ -161,8 +100,64 @@
         <!--/*]]>*/-->
     <!--</script>-->
 
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+
+    <script>
+        webshims.setOptions('waitReady', false);
+        webshims.setOptions('forms-ext', {types: 'date'});
+        webshims.polyfill('forms forms-ext');
+        $.webshims.formcfg = {
+            en: {
+                dFormat: '-',
+                dateSigns: '-',
+                patterns: {
+                    d: "yy-mm-dd"
+                }
+            }
+        };
+    </script>
+    <script type="text/javascript" th:inline="javascript">
+        var statAll = [[${statall}]];
+        var inprocessstatus = [[${inprocessstatus}]];
+        var donestatus = [[${donestatus}]];
+        var startedstatus = [[${startedstatus}]];
+        var mediumpriority = [[${mediumpriority}]];
+        var lowpriority = [[${lowpriority}]];
+        var highpriority = [[${highpriority}]];
+        var memail = [[${memail}]];
+        var javadevmail = [[${javadevmail}]];
+        var teamleadmail = [[${teamleadmail}]];
+        var pmmail = [[${pmmail}]];
+        var testerqa = [[${testerqa}]];
+
+        window.onload=function () {
+            processStatusCharts();
+            taskPriorityChart();
+            taskEmailChart();
+            taskPriorityChartArea();
+            processStatusChartsBar();
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function clearFields() {
+            document.getElementById("duetodate").value="";
+            document.getElementById("taskdescr").value="";
+            document.getElementById("taskmail").value="";
+            document.getElementById("taskstatus").value="";
+            document.getElementById("taskpriority").value="";
+
+
+        }
+    </script>
+<script type="text/javascript">
+
+    $('#successmail').delay(1000).fadeOut(300);
+</script>
 </head>
-<body>
+<body  data-spy="scroll" data-target=".navbar"  id="hometown">
 <!--/*/ <th:block th:include="fragments/headermainpage :: header"></th:block> /*/-->
 
 <!--<div class="container">-->
@@ -179,10 +174,10 @@
 
 
 <!--<button onclick="processStatusCharts() ;taskPriorityChart();">show charts</button>-->
-    <div class="w3-card w3-row w3-hover-shadow w3-round" style="margin: 1%">
-            <div class="w3-half" id="chartContainer" style="height: 200px; width: 50%;"></div>
+    <div class="card  row" style="margin: 1%;width: 98%;">
+            <div class="col-sm-6" id="chartContainer" style="height: 200px; width: 50%;"></div>
 
-            <div class="w3-half" id="chartContainer2" style="height: 200px; width: 50%;"></div>
+            <div class="col-sm-6" id="chartContainer2" style="height: 200px; width: 50%;"></div>
 
 
     </div>
@@ -193,18 +188,18 @@
 
 
 
-    <form method="post" th:action="@{/}" th:object="${newTask}" enctype="multipart/form-data" id="carform" class="w3-card" style="margin: 1%">
-        <b style="margin: 40%">CREATE AND ASSIGN A NEW TASK</b>
+    <form method="post" th:action="@{/}" th:object="${newTask}" enctype="multipart/form-data" id="carform" class="form-horizontal" >
+       <h5><b style="margin: 40%">CREATE AND ASSIGN A NEW TASK</b></h5>
         <!--<fieldset>-->
-            <div class="row">
+            <div class="card row">
                 <!--<div class="nine columns">-->
 
-                <div class="w3-row-padding">
-                    <div class="w3-half">
-                        <div class="w3-row">
-                            <div class="w3-third"><h5 style="color: gray">Set a task priority</h5></div>
-                            <div class="w3-rest" >
-                                <select th:field="*{taskPriority}" form="carform" required="required" class="w3-select w3-border">
+                <div class="row ">
+                    <div class="col-sm-6">
+                        <div class="row form-group">
+                            <div class="col-sm-4 control-label"><h5 style="color: gray">SET A TASK PRIORITY</h5></div>
+                            <div class="col-sm-6" >
+                                <select th:field="*{taskPriority}" form="carform" required="required" class="form-control" id="taskpriority">
                                     <option th:each="taskPriority : ${taskPriority}"
                                             th:value="${taskPriority}"
                                             th:text="${taskPriority}"></option>
@@ -217,12 +212,12 @@
 
 
                     </div>
-                    <div class="w3-half">
-                        <div class="w3-row">
-                            <div class="w3-third"><h5 style="color: gray">Set a task status</h5></div>
-                            <div class="w3-rest" >
+                    <div class="col-sm-6">
+                        <div class="row form-group">
+                            <div class="col-sm-4 control-label"><h5 style="color: gray">SET A TASK STATUS</h5></div>
+                            <div class="col-sm-6" >
                                 <!--<input  type="text" placeholder="task status" class="u-full-width" th:field="*{taskStatus}" required="required" />-->
-                                <select th:field="*{taskStatus}" form="carform" required="required" class="w3-select w3-border">
+                                <select th:field="*{taskStatus}" form="carform" required="required" class="form-control" id="taskstatus">
                                     <option th:each="taskStatus : ${taskStatus}"
                                             th:value="${taskStatus}"
                                             th:text="${taskStatus}"></option>
@@ -238,25 +233,25 @@
                     </div>
 
                 </div>
-                <div class="w3-row-padding">
-                    <div class="w3-half">
+                <div class="row ">
+                    <div class="col-sm-6">
 
-                        <div class="w3-row">
-                            <div class="w3-third"><h5 style="color: gray">Set a due to date </h5></div>
-                            <div class="w3-rest" >
-                                <input type="date"  placeholder="due to(set a date)" class="u-full-width" th:field="*{dueTo}" required="required" />
-                                <!--type='text' onfocus="(this.type='date')"-->
+                        <div class="row form-group" >
+                            <div class="col-sm-4 control-label"><h5 style="color: gray">SET A DUE  DATE </h5></div>
+                            <div class="col-sm-6" >
+                                <input type="date"  placeholder="due to(set a date)" class="form-control" th:field="*{dueTo}" required="required" id="duetodate" />
+                                <!--onfocus="(this.type='date')"-->
                             </div>
 
                         </div>
 
 
                     </div>
-                    <div class="w3-half">
-                        <div class="w3-row">
-                            <div class="w3-third"><h5 style="color: gray">choose an email</h5></div>
-                            <div class="w3-rest" >
-                                <select th:field="*{email}" form="carform" required="required" class="w3-select w3-border">
+                    <div class="col-sm-6">
+                        <div class="row form-group">
+                            <div class="col-sm-4 control-label"><h5 style="color: gray"><span class="glyphicon glyphicon-envelope"></span>   CHOOESE AN EMAIL</h5></div>
+                            <div class="col-sm-6" >
+                                <select th:field="*{email}" form="carform" required="required" class="form-control" id="taskmail">
                                     <option th:each="email : ${email}"
                                             th:value="${email}"
                                             th:text="${email}"></option>
@@ -270,9 +265,9 @@
                     </div>
 
                 </div>
-                <div class="w3-row-padding">
-                    <div class="w3-col">
-                        <input type="text" placeholder="Description of the task" class="u-full-width" th:field="*{description}" required="required"/>
+                <div class="row form-group">
+                    <div class="col-sm-12">
+                        <input type="text" placeholder="DESCRIPTION OF THE TASK" class="form-control input-lg" th:field="*{description}" required="required" id="taskdescr"/>
 
                     </div>
 
@@ -290,16 +285,22 @@
 
                             <!--</div>-->
 
-                <div class="w3-row">
-                    <div class=" w3-container w3-third">
-                        <button type="submit" class="w3-btn w3-white w3-border w3-border-blue w3-round" style="width: 150px;padding-top: 10px; text-align: center;margin-left: auto" >ADD</button>
+                <div class="row ">
+                    <div class=" container col-sm-2 col-sm-offset-4">
+                        <button type="submit" class="btn btn-md btn-primary btn-block" style="width: 150px; text-align: center;" >ADD</button>
                     </div>
-                    <div class="w3-container w3-twothird">
-                        <div th:if="${message}" class="w3-panel w3-pale-green  w3-border w3-round w3-center w3-animate-right">
-                            <h6 th:text="${message}"/>
+                    <div class=" container col-sm-2">
+                        <button type="button" onclick="clearFields()" class="btn btn-primary  btn-md" style="width: 150px;text-align: center;background-color: lightpink;margin-left: auto" >CANCEL/CLEAR</button>
+                    </div>
+                    <div class="container col-sm-8 "  >
+                        <div th:if="${message}" class="alert alert-succes" style="background-color: #ddffdd;margin-left: 35%;text-align: center" >
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <h5  th:text="${message}"/>
                         </div>
-                        <div th:if="${deleted}" class="w3-panel w3-pale-red  w3-border-red w3-round">
-                            <h6 th:text="${deleted}"/>
+                        <div th:if="${deleted}" class="alert alert-warning" style="background-color: #ffffcc;margin-left: 35%;text-align: center">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+
+                            <h5 th:text="${deleted}"/>
                         </div>                    </div>
                 </div>
 
@@ -312,12 +313,12 @@
                     <!--<input type="text" placeholder="Task priority" class="u-full-width" th:field="*{taskPriority}" required="required"/>-->
                     <!--<input type="text" placeholder="task status" class="u-full-width" th:field="*{taskStatus}" required="required" />-->
 
-                <div class="w3-container w3-center w3-animate-right">
-                    <span style="color: red;background-color: lavenderblush;font-weight:bold" th:if="${#fields.hasErrors('description')}" th:errors="*{description}" onclick="this.parentElement.style.display='none'">Description errors</span>
-                    <span style="color: red" th:if="${#fields.hasErrors('taskPriority')}" th:errors="*{taskPriority}">task priority errors</span>
-                    <span style="color: red" th:if="${#fields.hasErrors('taskStatus')}" th:errors="*{taskStatus}">status errors</span>
-                    <span style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email errors</span>
-                    <span style="color: red; background-color: lavenderblush;font-weight:bold"  th:if="${#fields.hasErrors('dueTo')}" th:errors="*{dueTo}">due to date  errors</span>
+                <div class="container col-sm-offset-4 " >
+                        <span style="color:red;background-color: lavenderblush;font-weight:bold;text-align: center" th:if="${#fields.hasErrors('description')}" th:errors="*{description}" onclick="this.parentElement.style.display='none'">Description errors</span><br/>
+                        <span  th:if="${#fields.hasErrors('taskPriority')}" th:errors="*{taskPriority}">task priority errors</span>
+                        <span  th:if="${#fields.hasErrors('taskStatus')}" th:errors="*{taskStatus}">status errors</span>
+                        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email errors</span>
+                        <span style="color:red;background-color: lavenderblush;font-weight:bold;text-align: center" th:if="${#fields.hasErrors('dueTo')}" th:errors="*{dueTo}">due to date  errors</span><br/>
                 </div>
 
 
@@ -338,8 +339,8 @@
 
 
     </form>
-    <div class="w3-responsive w3-round" style="margin: 1%" id="current_tasks">
-        <table
+    <div class="table-responsive" style="margin: 1%" id="current_tasks">
+        <table class="table table-condensed"
                 data-toggle="table"
                 data-classes="table table-hover table-condensed"
                 data-striped="true"
@@ -350,23 +351,23 @@
                 data-order="id"
 
         >
-            <caption><h1><b>Current tasks</b></h1></caption>
+            <caption ><h3><b>Current tasks</b></h3></caption>
             <!--<tr class="w3-pale-blue">-->
-                <thead class="w3-pale-blue">
+                <thead class="panel panel-primary" style="background-color:lightgrey">
                 <th data-field="id" data-sortable="true">ID</th>
                 <!--<th><b>COMPLETED</b></th>-->
                 <th data-field="description" data-sortable="true"><b>DESCRIPTION</b></th>
                 <th data-field="createDate" data-sortable="true"><b>CREATED AT</b></th>
-                <th data-field="dueToDate" data-sortable="true"><b>DUE TO</b></th>
+                <th data-field="dueToDate" data-sortable="true"><b>DUE DATE</b></th>
                 <th data-field="priority" data-sortable="true"><b>PRIORITY</b></th>
                 <th data-field="status" data-sortable="true"><b>STATUS</b></th>
-                <th data-field="email" data-sortable="true"><b>EMAIL</b></th>
+                <th data-field="email" data-sortable="true"><b><span class="glyphicon glyphicon-envelope"></span>   EMAIL</b></th>
 
                 <th><b>ACTION</b></th>
                 <th><b>COMPLETED</b></th>
                 </thead>
             <!--</tr>-->
-            <tbody id="myTable" class="w3-round" >
+            <tbody id="myTable">
 
             <tr th:each="task  : ${tasks}"  >
                 <td th:text="${task.id}"></td>
@@ -391,16 +392,16 @@
 
 
                 <td>
-                    <div class="three columns">
+                    <div >
                         <form th:method="delete" th:action="@{/}">
                             <input type="hidden" name="id" th:value="${task.id}" />
-                            <button class="w3-btn-floating w3-ripple w3-round w3-large w3-pale-red" type="submit" style="text-align:center;width: auto;margin-left: auto" onclick="return confirm(' Delete task ? Are You shure ?')" >Delete</button>
+                            <button class="btn btn-default" type="submit" style="text-align:center;width: auto;margin-left: auto;background-color:mistyrose " onclick="return confirm(' Delete task ? Are You shure ?')" >Delete</button>
                         </form>
 
                     </div>
                 </td>
                 <td>
-                    <div class="three columns">
+                    <div   >
                         <form th:method="put" th:action="@{/}">
                             <input type="hidden" name="id" th:value="${task.id}" />
                             <input type="hidden" name="description" th:value="${task.description}" />
@@ -449,15 +450,56 @@
             <!--</form>-->
         <!--</div>-->
     <!--</div>-->
-  <hr/>
+  <hr />
+
+
+<!--<div class="container " >-->
+    <div class="card row " id="rombs" style="padding-top: 6%">
+        <div class="  col-sm-6" >
+            <canvas id="radar"  ></canvas>
+        </div>
+        <div class=" col-sm-6"   >
+            <canvas id="polar" ></canvas>
+
+        </div>
+    </div>
+
+
+<!--</div>-->
+<!--<div class="container">-->
+    <div class="card row " style="margin-bottom: 5%">
+        <div class=" col-sm-6">    <canvas id="c33" style="width: 100%; height: 200px"></canvas>
+        </div>
+        <div class="col-sm-6">    <canvas id="c44" style="width: 100%; height: 200px"></canvas>
+        </div>
+
+    </div>
+
+<div class=" card  row" style="margin: 1%;margin-top: 10%" id="detailedcharts">
+    <div class="col-sm-6" id="chartContainer3" style="height: 200px; width: 50%;"></div>
+
+    <div class="col-sm-6 " id="chartContainer4" style="height: 200px; width: 50%;"></div>
+
+
+</div>
+<div class=" card row" style="margin: 1%">
+    <div class="col-sm-11" id="chartContainer5" style="height: 250px; width: 100%;"></div>
+
+</div>
+
+
+    <!--<div class="w3-row  w3-card w3-hover-shadow">-->
+
+    <!--</div>-->
+<!--</div>-->
 <!--</div>-->
 <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script type="text/javascript" th:inline="javascript">
-    window.onload=function () {
-        processStatusCharts();
-        taskPriorityChart();
-    }
-</script>
+<!--<script type="text/javascript" th:inline="javascript">-->
+    <!--window.onload=function () {-->
+        <!--processStatusCharts();-->
+        <!--taskPriorityChart();-->
+    <!--}-->
+<!--</script>-->
 
 
 
@@ -524,6 +566,252 @@
     }
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("c33").getContext("2d");
+    var data = {
+        labels: ["my tasks", "java dev tasks", "project manager tasks", "team lead tasks", "QA tester tasks"],
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(20,100,150,0.3)",
+            strokeColor: "rgba(130,240,200,1)",
+            pointColor: "rgba(200,100,25,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(100,200,20,1)",
+            data: [memail,javadevmail,pmmail,teamleadmail,testerqa]
+        }, {
+            label: "My Second dataset",
+            fillColor: "rgba(100,200,300,0.9)",
+            strokeColor: "rgba(200,100,200,1)",
+            pointColor: "rgba(80,117,105,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [statAll,highpriority,lowpriority,mediumpriority,donestatus]
+        },
+            {
+                label: "My Third dataset",
+                fillColor: "rgba(170,112,135,0.5)",
+                strokeColor: "rgba(203,140,110,1)",
+                pointColor: "rgba(200,50,100,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(110,50,200,1)",
+                data: [highpriority,startedstatus,lowpriority,inprocessstatus,statAll]},
+            {
+                label: "My Fourth dataset",
+                fillColor: "rgba(10,300,150,0.5)",
+                strokeColor: "rgba(140,10,100,1)",
+                pointColor: "rgba(100,153,300,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(120,147,100,1)",
+                data: [donestatus,inprocessstatus,highpriority,statAll,lowpriority]}
+
+        ]
+
+    };
+
+    var MyNewChart = new Chart(ctx).Line(data);
+</script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("c44").getContext("2d");
+    var data = {
+        labels: ["QA Tester Tasks", "Team Lead Tasks", "project manager tasks", "Java Dev Tasks", "My Tasks"],
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(330,330,330,0.2)",
+            strokeColor: "rgba(330,330,330,1)",
+            pointColor: "rgba(330,330,330,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(300,300,300,1)",
+            data: [testerqa,teamleadmail,pmmail,javadevmail,memail]
+        }, {
+            label: "My Second dataset",
+            fillColor: "rgba(100,187,205,0.6)",
+            strokeColor: "rgba(151,187,400,1)",
+            pointColor: "rgba(151,187,100,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,12,1)",
+            data: [lowpriority,mediumpriority,donestatus,highpriority,statAll]
+        },
+            {
+                label: "My Third dataset",
+                fillColor: "rgba(50,157,300,0.4)",
+                strokeColor: "rgba(153,120,150,1)",
+                pointColor: "rgba(153,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,150,1)",
+                data: [inprocessstatus,highpriority,startedstatus,lowpriority,statAll]},
+            {
+                label: "My Fourth dataset",
+                fillColor: "rgba(10,300,150,0.5)",
+                strokeColor: "rgba(140,10,100,1)",
+                pointColor: "rgba(100,153,300,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(120,147,100,1)",
+                data: [highpriority,inprocessstatus,donestatus,statAll,lowpriority]}
+
+        ]
+
+    };
+
+    var MyNewChart = new Chart(ctx).Line(data);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+
+<script type="text/javascript"  th:inline="javascript" >
+    var ctx = document.getElementById("radar");
+    var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ["MY TASKS", "JAVA DEV TASKS", "TeAM LEAD TASKS", "PM TASKS", "QA TESTER TASKS"],
+            datasets: [{
+                label: 'TASKS BY MAIL',
+                backgroundColor: "rgba(153,255,51,0.4)",
+                borderColor: "rgba(153,255,51,1)",
+                data: [memail,javadevmail,pmmail,teamleadmail,testerqa]
+            }, {
+                label: 'TASKS BY STATUS',
+                backgroundColor: "rgba(255,153,0,0.4)",
+                borderColor: "rgba(255,153,0,1)",
+                data: [inprocessstatus,startedstatus,lowpriority,highpriority,statAll]
+            }]
+        }
+    });
+</script>
+<script type="text/javascript"  th:inline="javascript">
+    var ctx = document.getElementById("polar").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: ["ALL TASKS", "DONE TASKS", "STARTED TASKS", "IN PROCESS TASKS", "LOW PRIORITY", "HIGH", "MEDUIM"],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [statAll,donestatus,startedstatus,inprocessstatus,lowpriority,highpriority,mediumpriority]
+            }]
+        }
+    });
+</script>
+
+
+<!--cnavas-->
+
+<script type="text/javascript" th:inline="javascript">
+
+    //    var statAll = [[${statall}]];
+    //    var inprocessstatus = [[${inprocessstatus}]];
+    //    var donestatus = [[${donestatus}]];
+    //    var startedstatus = [[${startedstatus}]];
+    function processStatusChartsBar() {
+        var chart = new CanvasJS.Chart("chartContainer3", {
+            theme: "theme3",//theme1
+            title:{
+                text: "TASK PROCESSES CHART"
+            },
+            animationEnabled: true,   // change to true
+            data: [
+                {
+                    // Change type to "bar", "area", "spline", "pie",'column'etc.
+                    type: "bar",
+                    dataPoints: [
+                        { label: "ALL TASKS",  y: statAll },
+                        { label: "TASKS IN PROCESS", y: inprocessstatus  },
+                        { label: "COMPLETED STATUS TASKS", y: donestatus  },
+                        { label: "STARTED STATUS TASKS",  y: startedstatus  }
+
+                    ]
+                }
+            ]
+        });
+        chart.render();
+    }
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+
+    //    var statAll = [[${statall}]];
+    //    var mediumpriority = [[${mediumpriority}]];
+    //    var lowpriority = [[${lowpriority}]];
+    //    var highpriority = [[${highpriority}]];
+
+
+    function taskPriorityChartArea() {
+        var chart = new CanvasJS.Chart("chartContainer4", {
+            theme: "theme3",//theme1
+            title:{
+                text: "TASK PRIORIRTIES CHART"
+            },
+            animationEnabled: true,   // change to true
+            data: [
+                {
+                    // Change type to "bar", "area", "spline", "pie",'column'etc.
+                    type: "area",
+                    dataPoints: [
+                        { label: "ALL TASKS",  y: statAll },
+                        { label: "LOW PRIORITY TASKS",  y: lowpriority  },
+                        {label:"HIGH PRIORITY TASKS",y:highpriority},
+                        {label:"MEDIUM PRIORITY TASKS",y:mediumpriority}
+                    ]
+                }
+            ]
+        });
+        chart.render();
+    }
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+
+    //    var statAll = [[${statall}]];
+    //    var memail = [[${memail}]];
+    //    var javadevmail = [[${javadevmail}]];
+    //    var teamleadmail = [[${teamleadmail}]];
+    //    var pmmail = [[${pmmail}]];
+    //    var testerqa = [[${testerqa}]];
+
+
+
+    function taskEmailChart() {
+        var chart = new CanvasJS.Chart("chartContainer5", {
+            theme: "theme3",//theme1
+            title:{
+                text: "ASSIGNED TASKS BY EMAIL"
+            },
+            animationEnabled: true,   // change to true
+            data: [
+                {
+                    // Change type to "bar", "area", "spline", "pie",'column'etc.
+                    type: "column",
+                    dataPoints: [
+                        { label: "ALL TASKS",  y: statAll },
+                        { label: "MY TASKS",  y: memail  },
+                        {label:"JAVA DEVELOPER TASKS",y:javadevmail},
+                        {label:"TEAM LEAD TASKS",y:teamleadmail},
+                        {label:"PROJECT MANAGER TASKS",y:pmmail},
+                        {label:"QA TESTER TASKS",y:testerqa}
+
+                    ]
+                }
+            ]
+        });
+        chart.render();
+    }
+
+</script>
+
 
 </body>
 </html>
