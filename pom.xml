@@ -28,6 +28,11 @@
 
 
 	</properties>
+	<developers>
+  <developer>
+    <id>Anton Syzko     antonsyzko@gmail.com</id>
+  </developer>
+</developers>
 
 	<dependencies>
 		<dependency>
