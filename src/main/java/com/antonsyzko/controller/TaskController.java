@@ -112,7 +112,7 @@ public class TaskController extends WebMvcConfigurerAdapter {
 
 
                 redirectAttributes.addFlashAttribute("message",
-                        "task has been successfully sent to " + task.getEmail()) ;
+                        "TASK HAS BEEN SUCCESSFULLY SENT TO      " + task.getEmail()) ;
 
             }catch( Exception e ){
                 // catch error
