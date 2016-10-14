@@ -7,7 +7,7 @@
 <body>
 <b style="margin-left: 40%">TASK MANAGER</b>
 <hr />
-Task manager app for assigning a tasks of certain priority and status.Designed for  a small IT collective  ( 5 persons , can  be extended to any number of users ).<br/>
+Task manager app for assigning a tasks of certain priority and status. Designed for  a small IT collective  ( 5 persons , can  be extended to any number of users ).<br/>
 Tasks are passed by email ( creation  and due date, status, priority are mentioned in email ).<br/>
 All tasks are stored in database , further  modifications are reflected in database<br/>
 Tasks are represented  in  a form of table ( can be sorted by different columns ), deleted or marked as completed. Single task can be searched via search window.<br/>
@@ -16,7 +16,7 @@ are reflected in the  database and thus are passed from server to current graphi
 <hr/>
 <b style="margin-left: 40%">Getting Started</b><br/>
    <a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a><br/>
-use test for username  and test for password<br/>
+use <b>test</b> for username  and <b>test</b> for password<br/>
 CREATE AND ASSIGN A NEW TASK - set priority / status / due date ( mind the date has to be  in future )/email / description (between 1 - 64 symbols)<br/>
 click ADD to assign the task ( email will be sent ) or CANCEL/CLEAR<br/>
 check CURRENT TASKS LIST - new task has to appear at the end of the  list ( sort if needed) <br/>
