@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
 </head>
 <body>
-
 <b style="margin-left: 40%">TASK MANAGER</b>
 <hr />
 Task manager app for assigning a tasks of certain priority and status. Targeted a small crew ( 5 persons ).<br/>
@@ -16,7 +15,7 @@ All tasks statistics are represented in the form of graphs and charts - any modi
 are reflected in the  database and thus are passed from server to current graphic representation <br/>
 <hr/>
 <b style="margin-left: 40%">Getting Started</b><br/>
-   <link href="https://antonsyzkotaskmanagercharts.herokuapp.com/login"><br/>
+   <a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a><br/>
 use test for username  and test for password<br/>
 CREATE AND ASSIGN A NEW TASK - set priority / status / due date ( mind the date has to be  in future )/email / description (between 1 - 64 symbols)<br/>
 click ADD to assign the task ( email will be sent ) or CANCEL/CLEAR<br/>
@@ -27,7 +26,7 @@ check graphs and charts (click on charts and graphs to check detailed info )<br/
 <hr/>
 
 <b style="margin-left: 40%">DEMO</b><br/>
-<link href="https://antonsyzkotaskmanagercharts.herokuapp.com/login"><br/>
+<h><a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a></h><br/>
 
 
 <hr/>
@@ -49,8 +48,8 @@ check graphs and charts (click on charts and graphs to check detailed info )<br/
 <b style="margin-left: 40%">Contact</b><br/>
 @Anton Szyko<br/>
 email:<email>antonsyzko@gmail.com</email><br/>
-linkedIn : <link href="https://www.linkedin.com/in/anton-syzko-b709ab123"><br/>
+linkedIn : <a href="https://www.linkedin.com/in/anton-syzko-b709ab123">Anton Syzko</a><br/>
 <b style="margin-left: 50%">License</b><br/>
 <span>MIT</span><br/>
-
+</body>
 </html>
