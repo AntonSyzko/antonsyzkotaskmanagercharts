@@ -1,12 +1,9 @@
 package com.antonsyzko.entity;
-
 /**
  * Created by Admin on 16.09.2016.
  */
-
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
@@ -50,7 +47,6 @@ public class Task {
         this.dueTo = dueTo;
     }
 
-    //indu
      @NotNull(message = "priority should not  be  null ")
      @Size(min = 1, max = 30,message = " task priority has to be between 1 and 30 symbols long ")
     @Column(name="task_priority")
@@ -61,8 +57,6 @@ public class Task {
     @Column(name="task_status")
     private String taskStatus;
 
-//    @Column(name="task_archived")
-//    private int taskArchived = 0;
 
     public String getTaskPriority() {
         return taskPriority;
@@ -80,18 +74,7 @@ public class Task {
         this.taskStatus = taskStatus;
     }
 
-//    public int getTaskArchived() {
-//        return taskArchived;
-//    }
-//
-//    public void setTaskArchived(int taskArchived) {
-//        this.taskArchived = taskArchived;
-//    }
 
-//indu
-
-
-    //21
 
     @NotNull(message = "email should not  be  null ")
     @Size(min = 1, max = 64,message = " email  has to be between 1 and 64 symbols long ")
@@ -107,9 +90,6 @@ public class Task {
         this.email = email;
     }
 
-
-    //21
-
     public Long getId() {
         return id;
     }
@@ -124,11 +104,10 @@ public class Task {
     public boolean isCompleted() {
         return completed;
     }
+    
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-
-
 
     public Date getCreatedAt() {
         return createdAt;
@@ -137,7 +116,6 @@ public class Task {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
-
 
     @Override
     public String toString() {
@@ -151,6 +129,4 @@ public class Task {
         sb.append('}');
         return sb.toString();
     }
-
-
 }
