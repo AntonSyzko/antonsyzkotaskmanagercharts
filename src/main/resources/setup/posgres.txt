@@ -14,18 +14,12 @@ CREATE TABLE task (
 
 alter sequence task_seq restart with 1;
 
-
-
-
 CREATE TABLE users (
   username varchar(100) NOT NULL,
   password varchar(100) NOT NULL,
   enabled smallint NOT NULL,
   PRIMARY KEY (username)
 )
-
-
-
 
 CREATE TABLE authorities (
   username varchar(100) NOT NULL,
@@ -34,10 +28,7 @@ CREATE TABLE authorities (
   CONSTRAINT fk_authorities_users FOREIGN KEY (username) REFERENCES users (username)
 )
 
-
 CREATE UNIQUE INDEX ix_auth_username ON authorities(username,authority);
-
-
 
 *******************
 INSERT INTO task (description,due_to ,completed,email,task_priority,task_status) VALUES
