@@ -6,7 +6,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-
 public class AntonsyzkotaskmanagerchartsApplication {
 
 	public static void main(String[] args) {
