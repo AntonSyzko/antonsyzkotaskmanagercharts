@@ -3,7 +3,6 @@ package com.antonsyzko;
 import com.antonsyzko.config.SessionListener;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
@@ -19,5 +18,4 @@ public class ServletInitializer extends SpringBootServletInitializer {
 		super.onStartup(servletContext);
 		servletContext.addListener(new SessionListener());
 	}
-
 }
