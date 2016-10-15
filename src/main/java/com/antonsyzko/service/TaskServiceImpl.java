@@ -1,13 +1,7 @@
 package com.antonsyzko.service;
-
 /**
  * Created by Admin on 16.09.2016.
  */
-
-
-
-
-
 import com.antonsyzko.entity.Task;
 import com.antonsyzko.repository.TaskRepository;
 import org.slf4j.Logger;
@@ -15,18 +9,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class TaskServiceImpl {
     private Logger logger = LoggerFactory.getLogger(TaskServiceImpl.class);
-
-
+    
     @Autowired
     private TaskRepository repository;
-
 
     @Autowired
     private NotificationService notificationService;
@@ -60,16 +51,6 @@ public class TaskServiceImpl {
         return repository.saveAndFlush(newTask);
     }
 
-
-//    //21
-//    @Transactional
-//    public Task updateCompleted(Long id,Task task){
-//        Task entity = findOneSafe(id);
-//        entity.setCompleted(task.isCompleted());
-//        return repository.saveAndFlush(entity);
-//    }
-//    //21
-
     @Transactional
     public Task update(Long id, Task task) {
         Task entity = findOneSafe(id);
@@ -78,9 +59,7 @@ public class TaskServiceImpl {
         entity.setTaskStatus(task.getTaskStatus());
         entity.setTaskPriority(task.getTaskPriority());
         entity.setEmail(task.getEmail());
-
         entity.setDueTo(task.getDueTo());
-//        return entity;
         return repository.saveAndFlush(entity);
     }
 
@@ -98,14 +77,4 @@ public class TaskServiceImpl {
             return task;
         }
     }
-
-
-
-
-
-
-
-
-
-
 }
