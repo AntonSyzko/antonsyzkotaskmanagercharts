@@ -36,18 +36,6 @@ public class TaskServiceImpl {
         newTask.setTaskStatus(task.getTaskStatus());
         newTask.setEmail(task.getEmail());
         newTask.setDueTo(task.getDueTo());
-//
-//        try {
-//            notificationService.sendNotificaitoin(task);
-//
-//
-//
-//        }catch( Exception e ){
-//            // catch error
-//            logger.info("Error Sending Email: " + e.getMessage());
-//
-//        }
-
         return repository.saveAndFlush(newTask);
     }
 
