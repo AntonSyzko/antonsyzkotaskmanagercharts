@@ -1,5 +1,4 @@
 package com.antonsyzko.config;
-
 /**
  * Created by Admin on 19.09.2016.
  */
@@ -13,15 +12,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-
 public class MvcConfig extends WebMvcConfigurerAdapter {
-
-    //todel
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**") .addResourceLocations("/resources/");
         registry.addResourceHandler("/static/**") .addResourceLocations("/static/");
-
     }
 
     @Override
@@ -29,10 +24,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/home").setViewName("home");
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/tasks").setViewName("tasks");
-
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/error").setViewName("error");
-
     }
 
     @Bean
@@ -44,5 +37,4 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(dateFormatter());
     }
-
 }
