@@ -12,5 +12,4 @@ public class AntonsyzkotaskmanagerchartsApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
