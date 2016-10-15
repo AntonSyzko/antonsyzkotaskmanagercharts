@@ -1,9 +1,7 @@
 package com.antonsyzko.config;
-
 /**
  * Created by Admin on 19.09.2016.
  */
-
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +18,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers(HttpMethod.POST, "/").authenticated()
            .antMatchers(HttpMethod.PUT, "/").authenticated()
               .antMatchers(HttpMethod.DELETE, "/").authenticated()
-
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin()
@@ -48,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().deleteCookies("remember-me")
                 .permitAll().and().rememberMe();
-//        //session
+//        //limited session controle - max 3 sessions permit - switched off for open demo use 
 //        http
 //                .sessionManagement()
 //                .maximumSessions(3)
@@ -60,10 +56,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        //session
     }
 
-
     @Autowired
     private DataSource datasource;
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -82,7 +76,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             User userDetails = new User("test", encoder.encode("test"), authorities);
             User userDetails2 = new User("admin", encoder.encode("admin"), authorities);
 
-            //userDetailsService.createUser(userDetails2);
+            userDetailsService.createUser(userDetails2);
         }
     }
 
