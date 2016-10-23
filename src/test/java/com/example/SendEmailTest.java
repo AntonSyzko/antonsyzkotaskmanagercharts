@@ -1,11 +1,9 @@
-package com.scrummater.tool;
+package com.example;
 
-import com.scrummater.tool.entity.Task;
 import org.junit.Test;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Async;
 
@@ -81,3 +79,4 @@ public class SendEmailTest {
         System.out.println("Email Sent!");
     }
 }
+
