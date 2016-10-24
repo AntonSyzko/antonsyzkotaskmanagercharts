@@ -1,4 +1,5 @@
-package com.antonsyzko.geotracker;
+package com.example;
+
 
 import org.junit.Test;
 
