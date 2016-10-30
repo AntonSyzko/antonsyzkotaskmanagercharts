@@ -31,7 +31,7 @@ check graphs and charts (click on charts and graphs to check detailed info )<br/
 
 <hr/>
 
-<b style="margin-left: 40%">Techologies used </b><br/>
+<b style="margin-left: 40%">Technologies used </b><br/>
 <span>JAVA EE</span><br/>
 <span>Spring Boot</span><br/>
 <span>Thymeleaf</span><br/>
