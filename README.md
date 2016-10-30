@@ -15,7 +15,7 @@ All tasks statistics are represented in the form of graphs and charts - any modi
 are reflected in the  database and thus are passed from server to current graphic representation <br/>
 <hr/>
 <b style="margin-left: 40%">Getting Started</b><br/>
-   <a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a><br/>
+   <a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a> This App on Heroku Cloud <br/>
 use <b>test</b> for username  and <b>test</b> for password<br/>
 CREATE AND ASSIGN A NEW TASK - set priority / status / due date ( mind the date has to be  in future )/email / description (between 1 - 64 symbols)<br/>
 click ADD to assign the task ( email will be sent ) or CANCEL/CLEAR<br/>
@@ -26,7 +26,7 @@ check graphs and charts (click on charts and graphs to check detailed info )<br/
 <hr/>
 
 <b style="margin-left: 40%">DEMO</b><br/>
-<h><a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a></h><br/>
+<h><a href="https://antonsyzkotaskmanagercharts.herokuapp.com/login">antonsyzkotaskmanagercharts</a></h> This App on Heroku Cloud <br/>
 
 
 <hr/>
